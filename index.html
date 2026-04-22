@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brew Haven Café is a modern café experience with artisan coffee, refined desserts, gourmet snacks, and a warm premium atmosphere.">
+    <title>Brew Haven Café | Modern Café</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-overlay" id="authOverlay" aria-hidden="true">
+        <section class="auth-modal" id="authModal" aria-labelledby="authTitle">
+            <div class="auth-copy">
+                <p class="eyebrow">Member Access</p>
+                <h2 id="authTitle">Welcome to Brew Haven Café.</h2>
+                <p>Log in to continue your visit, or create an account for reservations, saved details, and a smoother café experience on this demo site.</p>
+            </div>
+
+            <div class="auth-toggle" id="authToggle">
+                <button class="auth-tab active" type="button" data-mode="login">Login</button>
+                <button class="auth-tab" type="button" data-mode="signup">Create Account</button>
+            </div>
+
+            <form class="auth-form" id="authForm">
+                <label class="field field-full" id="authNameField" hidden>
+                    <span>Full Name</span>
+                    <input type="text" name="name" placeholder="Enter your full name">
+                </label>
+                <label class="field field-full">
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </label>
+                <label class="field field-full">
+                    <span>Password</span>
+                    <input type="password" name="password" placeholder="Enter your password" required>
+                </label>
+
+                <div class="auth-actions">
+                    <button class="button button-primary" id="authSubmit" type="submit">Login</button>
+                    <p class="guest-form-note" id="authMessage" aria-live="polite"></p>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <div class="page-shell">
+        <header class="navbar" id="navbar">
+            <div class="brand-block">
+                <a href="#home" class="brand-mark" aria-label="Brew Haven Café home">Brew Haven Café</a>
+                <span class="brand-caption">Modern Coffee House</span>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-panel" id="navPanel" aria-label="Primary navigation">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <span class="nav-user" id="navUser"></span>
+                <button class="button button-ghost nav-logout" id="logoutButton" type="button" hidden>Logout</button>
+                <a href="#menu" class="button button-ghost">Explore Menu</a>
+                <button class="cart-button" id="cartButton" type="button" aria-label="Cart items">
+                    Cart
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+        <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+            <div class="cart-drawer-header">
+                <div>
+                    <p class="cart-kicker">Your Order</p>
+                    <h2 id="cartTitle">Cart Summary</h2>
+                </div>
+                <button class="cart-close" id="cartClose" type="button" aria-label="Close cart">×</button>
+            </div>
+
+            <div class="cart-items" id="cartItems"></div>
+
+            <div class="cart-empty" id="cartEmpty">
+                <h3>Your cart is empty.</h3>
+                <p>Add coffee, desserts, or snacks from the menu to start your order.</p>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-summary-row">
+                    <span>Items</span>
+                    <strong id="cartItemTotal">0</strong>
+                </div>
+                <div class="cart-summary-row cart-summary-total">
+                    <span>Subtotal</span>
+                    <strong id="cartSubtotal">₹0</strong>
+                </div>
+                <div class="cart-footer-actions">
+                    <button class="button button-ghost cart-clear" id="cartClear" type="button">Clear Cart</button>
+                    <button class="button button-primary cart-checkout" id="cartCheckout" type="button">Checkout</button>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <section class="hero" id="home">
+                <div class="hero-media"></div>
+                <div class="hero-overlay"></div>
+                <div class="container hero-layout">
+                    <div class="hero-copy">
+                        <p class="eyebrow">Curated beans. Refined plates. Calm comfort.</p>
+                        <h1>Where every cup feels thoughtfully crafted.</h1>
+                        <p class="hero-text">
+                            Brew Haven Café brings together signature coffee, elegant desserts, and café dining in a warm modern setting designed for slow mornings and memorable evenings.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#menu" class="button button-primary">Explore Menu</a>
+                            <a href="#about" class="button button-outline">Our Story</a>
+                        </div>
+                    </div>
+
+                    <aside class="hero-card">
+                        <span class="hero-card-label">Signature Service</span>
+                        <h2>Small-batch coffee with a boutique dining touch.</h2>
+                        <p>Open daily from 8:00 AM to 10:30 PM with all-day coffee, plated desserts, and handcrafted café favourites.</p>
+                        <div class="hero-metrics">
+                            <div>
+                                <strong>12+</strong>
+                                <span>Signature drinks</span>
+                            </div>
+                            <div>
+                                <strong>4.9</strong>
+                                <span>Guest rating</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="section intro-strip">
+                <div class="container intro-grid">
+                    <article class="intro-card">
+                        <span>01</span>
+                        <h3>Single-origin coffee</h3>
+                        <p>Balanced roasts, textured milk, and polished presentation in every pour.</p>
+                    </article>
+                    <article class="intro-card">
+                        <span>02</span>
+                        <h3>Elegant desserts</h3>
+                        <p>Rich cheesecake, layered tiramisu, and plated sweets made for slow moments.</p>
+                    </article>
+                    <article class="intro-card">
+                        <span>03</span>
+                        <h3>Chef-led snacks</h3>
+                        <p>Fresh café sandwiches, buttery croissants, and savory bites with a premium finish.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section menu-section" id="menu">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">Menu</p>
+                        <h2>House favorites for every mood.</h2>
+                        <p>
+                            Explore our coffee, desserts, and snacks collection. Each dish is paired with a carefully selected Unsplash image and can be added to the cart with one tap.
+                        </p>
+                    </div>
+
+                    <div class="menu-toolbar">
+                        <div class="filter-group" id="filterGroup" role="tablist" aria-label="Menu categories">
+                            <button class="filter-button active" type="button" data-filter="all">All</button>
+                            <button class="filter-button" type="button" data-filter="coffee">Coffee</button>
+                            <button class="filter-button" type="button" data-filter="desserts">Desserts</button>
+                            <button class="filter-button" type="button" data-filter="snacks">Snacks</button>
+                        </div>
+                        <p class="menu-status" id="menuStatus">Showing all items</p>
+                    </div>
+
+                    <div class="menu-grid" id="menuGrid"></div>
+                </div>
+            </section>
+
+            <section class="section about-section" id="about">
+                <div class="container about-layout">
+                    <div class="about-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=900&q=80" alt="Interior of Brew Haven Café">
+                    </div>
+                    <div class="about-copy">
+                        <p class="eyebrow">About Us</p>
+                        <h2>A premium café built around comfort, craft, and detail.</h2>
+                        <p>
+                            Brew Haven Café was designed for guests who appreciate more than a quick coffee stop. We focus on intentional hospitality, refined plating, and a calm environment where every espresso, dessert, and savory plate feels elevated. From our dark wood interiors to our carefully balanced flavors, the entire experience is shaped to feel polished, warm, and unmistakably modern.
+                        </p>
+                        <div class="about-highlights">
+                            <div>
+                                <strong>Fresh daily</strong>
+                                <span>Seasonal desserts and chef-finished snacks</span>
+                            </div>
+                            <div>
+                                <strong>Craft service</strong>
+                                <span>Barista-led coffee with premium beans and milk textures</span>
+                            </div>
+                            <div>
+                                <strong>Designed atmosphere</strong>
+                                <span>Elegant café interiors for meetings, reading, and relaxed evenings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section gallery-section" id="gallery">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">Gallery</p>
+                        <h2>Atmosphere, coffee, and detail in every frame.</h2>
+                        <p>Discover the visual language of Brew Haven Café through a curated grid of aesthetic café imagery.</p>
+                    </div>
+
+                    <div class="gallery-grid">
+                        <figure class="gallery-card tall">
+                            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80" alt="Elegant coffee served on a café table">
+                        </figure>
+                        <figure class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80" alt="Barista pouring coffee in a premium café">
+                        </figure>
+                        <figure class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80" alt="Warm coffee corner with pastries">
+                        </figure>
+                        <figure class="gallery-card wide">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80" alt="Coffee beans and brewing tools at a modern café">
+                        </figure>
+                        <figure class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80" alt="Dessert and coffee pairing">
+                        </figure>
+                        <figure class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="Elegant café seating area">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section contact-section" id="contact">
+                <div class="container contact-layout">
+                    <div class="contact-copy">
+                        <p class="eyebrow">Contact</p>
+                        <h2>Visit Brew Haven Café.</h2>
+                        <p>Plan your next coffee meeting, quiet afternoon, or dessert stop with us. We would love to host you.</p>
+                    </div>
+
+                    <div class="contact-stack">
+                        <div class="contact-grid">
+                            <article class="contact-card">
+                                <span class="contact-label">Location</span>
+                                <h3>17 Oak Street, Koregaon Park, Pune</h3>
+                                <p>Located in the heart of the café district with indoor lounge seating and takeaway service.</p>
+                            </article>
+                            <article class="contact-card">
+                                <span class="contact-label">Phone</span>
+                                <h3>+91 9876543210</h3>
+                                <p>Reservations, group seating, and takeaway support available during opening hours.</p>
+                            </article>
+                            <article class="contact-card">
+                                <span class="contact-label">Social</span>
+                                <h3>@brew_haven_cafe</h3>
+                                <p>Instagram, Facebook, and Pinterest for menu drops, interiors, and seasonal specials.</p>
+                            </article>
+                        </div>
+
+                        <section class="user-details-card" id="userDetailsCard">
+                            <div class="guest-form-head">
+                                <span class="contact-label">User Details</span>
+                                <h3>Your saved profile.</h3>
+                                <p>View the details currently stored for this demo session.</p>
+                            </div>
+
+                            <div class="user-details-grid">
+                                <div class="user-detail">
+                                    <span>Name</span>
+                                    <strong id="detailName">Guest User</strong>
+                                </div>
+                                <div class="user-detail">
+                                    <span>Email</span>
+                                    <strong id="detailEmail">Not added</strong>
+                                </div>
+                                <div class="user-detail">
+                                    <span>Phone</span>
+                                    <strong id="detailPhone">Not added</strong>
+                                </div>
+                                <div class="user-detail">
+                                    <span>Status</span>
+                                    <strong id="detailStatus">Logged out</strong>
+                                </div>
+                            </div>
+                        </section>
+
+                        <form class="guest-form" id="guestForm">
+                            <div class="guest-form-head">
+                                <span class="contact-label">Guest Details</span>
+                                <h3>Login or reserve your next visit.</h3>
+                                <p>Share your details for table bookings, order updates, or member-style access on this demo page.</p>
+                            </div>
+
+                            <div class="guest-form-grid">
+                                <label class="field">
+                                    <span>Full Name</span>
+                                    <input type="text" name="name" placeholder="Enter your full name" required>
+                                </label>
+                                <label class="field">
+                                    <span>Email</span>
+                                    <input type="email" name="email" placeholder="Enter your email" required>
+                                </label>
+                                <label class="field">
+                                    <span>Phone</span>
+                                    <input type="tel" name="phone" placeholder="+91 98765 43210" required>
+                                </label>
+                                <label class="field">
+                                    <span>Password</span>
+                                    <input type="password" name="password" placeholder="Create a password" required>
+                                </label>
+                            </div>
+
+                            <div class="guest-form-actions">
+                                <button class="button button-primary" type="submit">Save Details</button>
+                                <p class="guest-form-note" id="guestFormMessage" aria-live="polite"></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer-layout">
+                <p>Brew Haven Café</p>
+                <span>Modern coffee, desserts, and café dining.</span>
+            </div>
+        </footer>
+    </div>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
